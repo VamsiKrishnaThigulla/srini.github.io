@@ -1,0 +1,1384 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+	font-size: 10px;
+	font-family: "Roboto Cn" , sans-serif;
+    scroll-behavior: smooth;
+
+}
+body{
+	overflow-x: hidden;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url("dist/background_imgs/Phone-576x1024.jpg");
+    border-radius: 10px;
+    background-position: center;
+    background-size: contain;
+}
+
+/*#####   Pre-Loader   ###########*/
+.loader-wrapper{
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent, transparent, #eff503);
+    animation: ring 2s linear infinite;
+}
+@keyframes ring{
+    0%{
+        transform: rotate(0deg);
+        filter: hue-rotate(360deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.loader:before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.loader:after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(45deg, transparent, transparent, #e5f403);
+    border-radius: 50%;
+    z-index: 1000;
+    z-index: 1;
+    filter: blur(30px);
+}
+.loaderImage{
+    position: absolute;
+    top: auto;
+    left: auto;
+    align-content: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.loaderImage img{
+    position: absolute;
+    top: auto;
+    left: auto;
+    justify-content: center;
+    align-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 45%;
+}
+
+
+nav{
+    background: rgba(0,77,128,0.5);
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+nav ul li{
+	list-style: none;
+	transform: translateX(1000px);
+	animation: slidein 1s forwards;
+}
+nav a{
+	text-decoration: none;
+	color: #eee;
+}
+
+header{
+	width: 100%;
+	height: 15vh;
+	background: linear-gradient(to top, rgba(0,0,0, 0.9), rgba(0,0,0, 0.3), rgba(0,0,0, 0.1), rgba(0,0,0, 0)) ,url("dist/background_imgs/indexbg.jpg") center no-repeat;
+	background-size: cover;
+}
+header .Login a{
+	text-decoration: none;
+	color: maroon;
+	transition: 0.8s;
+    z-index: 1;
+}
+.Login{
+	position: fixed;
+	top: 35px;
+	left: 20px;
+	font-size: 16px;
+	font-family: 'Roboto Cn', sans-serif;
+    transition: 0.5s;
+}
+header .Signup a{
+	text-decoration: none;
+	color: maroon;
+	transition: 0.8s;
+    z-index: 1;
+}
+.Signup{
+	position: fixed;
+	top: 35px;
+	right: 20px;
+	font-size: 16px;
+	font-family: 'Roboto Cn', sans-serif;
+    transition: 0.5s;
+
+}
+
+.container{
+    left: auto;
+    right: auto;
+    align-content: center;
+	max-width: 100%;
+	width: 90%;
+	margin: 0 auto;
+}
+header div.container nav{
+	position: fixed;
+	margin-top: 5px;
+    left: 50%;
+    top: 40px;
+	width: 85%;
+    transform: translate(-50%,-50%);
+	padding: 20px 20px 18px 20px;
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	font-size: 16px;
+	transition: 2s;
+}
+header div.container nav ul{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+header div.container nav ul li.navico{
+	opacity: 0;
+}
+header div.container nav h1.Logo-name{
+ 	font-size: 3rem;
+ 	font-weight: 300;
+ 	margin-left: 20px;
+ 	letter-spacing: 2px;
+ 	transform: translateX(-10000px);
+ 	animation: slidein 1s forwards;
+	transition: 1s;
+ }
+header div.container nav h1.Logo-name1{
+ 	display: none;
+	transition: 1s;
+ }
+header div.container nav h1.Logo-name span{
+	color: crimson;
+}
+
+nav ul li a:nth-child(1){
+	animation-delay: 0s;
+}
+nav ul li:nth-child(2){
+	animation-delay: 0.33s;
+}
+nav ul li:nth-child(3){
+	animation-delay: 0.66s;
+}
+nav ul li:nth-child(4){
+	animation-delay: 1s;
+}
+
+nav ul li a{
+	padding: 1rem o;
+	margin: 0 3rem;
+	position: relative;
+	letter-spacing: 2px;
+}
+nav ul li a:last-child{
+	margin-right: 0;
+}
+nav ul li a::before,
+nav ul li a::after{
+ 	content: '';
+ 	position: absolute;
+ 	width: 100%;
+ 	height: 2px;
+ 	margin-top: -3px;
+ 	margin-bottom: -5px;
+ 	background-color: crimson;
+ 	left: 0;
+ 	transform: scaleX(0);
+ 	transition: .5s;
+ }
+nav ul li a::before{
+  	top: 0;
+  	transform-origin: left;
+ }
+nav ul li a::after{
+  	bottom: 0;
+  	transform-origin: right;
+ }
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+  	transform: scaleX(1);
+ }
+
+/*########## slideshow Animation ############*/
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 90%;
+	max-height: 800px;
+  position: relative;
+    border: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+  margin: 30px auto;
+	z-index: 0;
+}
+/* Hide the images by default */
+.mySlides.fade {
+    display: none;
+    border: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+}
+.mySlides img.images {
+	width:100%;
+	border-radius: 20px;
+	box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.7);
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit transparen */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.text {
+  color: #f9f9f9;
+  font-size: 100%;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.text h1{
+	font-size: 180%;
+}
+.text h2{
+	font-size: 125%;
+	color: blue;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+    font-family: 'Lobster', cursive;
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots / indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #717171;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dot.active{
+  background-color: #fff;
+  transform: scale(1.5);
+}
+.dot:hover{
+    background-color: #e67300;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2.5s;
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .1}
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .1}
+  to {opacity: 1}
+}
+
+
+/* ##########   Managing sections of page  ########## */
+
+body div.rows{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.rows::after{
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
+.col-5{width: 41.66%;}
+.col-6{width: 50%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%;}
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+
+div.box{
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
+    border-radius: 10px;
+    margin: 24px;
+    padding: 27px 18px 30px 18px;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+div.box:hover{
+    transform: scale(1.1);
+    background: linear-gradient(to bottom, rgba(100,100,100,0.4), rgba(0,0,0,1));
+}
+div.box img{
+    width: 140px;
+    height: 140px;
+}
+div.box label{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+div.box p{
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+}
+hr{
+    border: 1px solid rgba(113,113,113,0.7);
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rows .col-12 h1{
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+
+div.next-section{
+    display: block;
+    margin-left: 8%;
+    margin-right: 8%;
+    box-shadow: 10px 15px 25px rgba(0,0,0,0.7);
+    background: linear-gradient(-45deg, rgba(180,50,0,0.6), rgba(0,50,120,0.8));
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+.next-section h1{
+    font-size: 40px;
+    color: brown;
+    font-family: 'Lobster', sans-serif;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+div.next-section .container{
+    display: block;
+    position: relative;
+    width: 95%;
+    height: 90%;
+    top: auto;
+    left: auto;
+    border-radius: 10px;
+    border: 4px solid blue;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.8);
+    background: linear-gradient(-45deg, rgba(0,0,0, 0.99), rgba(0,0,0, 0.5), rgba(0,0,0, 0.3), rgba(0,0,0, 0.1)) ,url("indexbg.jpg") center no-repeat;
+    transition: .4s;
+}
+.next-section .container h2{
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    line-height: 1.2;
+    padding: 5px;
+    color: #f9d9ff;
+    font-family: 'Bangers', cursive;
+}
+.next-section .container p.topic-info{
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px;
+    color: #fff;
+    transform: translateY(0) scale(1);
+    transition: 0.4s ease;
+}
+.container:hover p.topic-info{
+    transform: translateX(30px) scale(0);
+}
+.next-section .container .Post{
+    transform: translateY(60px) scale(0);
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    transition: .4s ease;
+    padding: 5px;
+}
+.next-section .Post:after {
+    content: " ";
+    clear: both;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+    transition: opacity .3s ease;
+    opacity: 0;
+}
+.next-section .container:hover h2, .next-section .container:hover .Post {
+    transform: translateY(0) scale(0.99);
+    justify-content: center;
+    opacity: 1;
+}
+.next-section .container .hover-effected{
+    transform: translateY(40px) scale(0);
+    text-align: center;
+    font-size: 20px;
+    padding: 0 5px 0 5px;
+}
+.next-section .container .Post .images{
+    display: flex;
+    width: 33.333%;
+    padding: 10px;
+}
+.next-section .container .Post .images img{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 8px;   
+}
+
+
+.vid-sec{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+}
+.vid-sec video{
+    position: relative;
+    display: block;
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+.vid-sec .vid-navigation{
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    max-height: 100px;
+    transform: translate(-50%);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+.vid-sec .vid-navigation img{
+    min-height: 100px;
+    max-height: 100px;
+    transition: 0.5s;
+    min-width: 150px;
+    max-width: 200px;
+}
+.vid-sec .vid-navigation li{
+    list-style: none;
+    cursor: pointer;
+    margin: 0 10px;
+    min-width: 150px;
+    max-width: 220px;
+    border-radius: 4px;
+    background: #fff;
+    padding: 3px 3px 0;
+    opacity: 0.3;
+    transition: 0.5s;
+}
+.vid-sec .vid-navigation li:hover,
+.vid-sec .vid-navigation img:hover{
+    width: 250px;
+    background: orange;
+    opacity: 1;
+}
+
+
+/*  # Wavy Reflective Content #  */
+.Wavy_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+.Wavy_text{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Wavy_text .Wavy_box{
+    position: relative;
+    width: 80%;
+    height: 400px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 15px linear-gradient(transparent,transparent,rgba(0,0,0,0.2));
+}
+.Wavy_text .Wavy_box:hover{
+    color: #000;
+    transition: 0.5s;
+}
+.Wavy_text .Wavy_box:hover:before{
+    background: #fff;
+    transition: 0.5s;
+}
+.Wavy_text .Wavy_box:before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #fff;
+    background: rgba(0,0,0,0.5);
+    filter: url(#wavy);
+}
+.Wavy_text .Wavy_box:after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 50%;
+    height: 100%;
+    border: 4px solid #fff;
+    border-right: none;
+    filter: url(#wavy);
+    background: rgba(250,250,250.0.05);
+}
+.Wavy_text .Wavy_box .Wavy_content{
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+
+/*  # Commented Section Content that was meant for my Website Un edited Stuff #  */
+/*
+section.sec1{
+ 	width: 100%;
+ 	height: 100vh;
+ 	background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.99)),url(bg4.jpg);
+ 	background-size: cover;
+	margin: 50px 50px 50px 50px;
+ }
+section.sec2{
+ 	width: 100%;
+ 	height: 100vh;
+	margin: 50px;
+ }
+section.sec2 h1{
+ 	font-size: 25px;
+ 	padding: 5px 100px 0;
+ 	margin-left: 200px;
+ }
+section.sec2 h2{
+ 	font-size: 20px;
+ 	padding: 0 100px;
+ }
+section.sec3{
+ 	width: 100%;
+ 	height: 100vh;
+ 	background:url(bg3.jpg);
+ 	background-size: cover;
+	margin: 50px;
+ }
+section.sec4{
+	background: url(Hope-And-Landon.jpg);
+ 	width: 100%;
+ 	height: 100vh;
+	margin: 50px;
+ }
+section.sec4 h3{
+	padding: 450px 130px 0;
+	display: block;
+	text-align: justify;
+}
+section.sec5{
+ 	width: 100%;
+ 	height: 100vh;
+ 	background:url(bg2.jpg);
+ 	background-size: cover;
+	margin: 50px;
+ }
+*/
+
+
+ /*#######################  Nav Bar Styling when nav changes from nav to nav black  ###################*/
+
+header div.container nav.black{
+	background: rgba(0,0,0, 0.5);
+	border-radius: 40px;
+	transition: 2s;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.8);
+}
+header div.container nav.black h1.Logo-name{
+ 	display: none;
+}
+header div.container nav.black h1.Logo-name1{
+	display: block;
+ 	font-size: 3rem;
+ 	font-weight: 300;
+ 	margin-left: 10px;
+ 	letter-spacing: 10px;
+ 	transform: translateX(-10000px);
+ 	animation: slidein 1s forwards;
+ }
+header div.container nav.black h1.Logo-name1 span{
+	color: green;
+}
+header.scrolled .Login{
+    z-index: 2;
+}
+header.scrolled .Login a{
+	position: fixed;
+	top: 35px;
+	color: green;
+	width: 5px;
+	height: 1px;
+	left: 43%;
+	transform: translateX(-500px);
+	animation: slidein 1s forwards;
+	transition: 0.6s;
+	z-index: 2;
+}
+header.scrolled .Signup{
+    z-index: 2;
+}
+header.scrolled .Signup a{
+	position: fixed;
+	top: 35px;
+	color: green;
+	width: 100px;
+	height: 1px;
+	right: 43.5%;
+	transform: translateX(500px);
+	animation: slidein 1s forwards;
+	transition: 0.6s;
+	z-index: 2;
+}
+
+ /*#########################   transitions   ##############################################*/
+
+ @keyframes slidein{
+ 	from{
+		transition: 1s;
+ 	}
+ 	to{
+ 		transform: translateX(0);
+		transition: 1s;
+ 	}
+ }
+
+/* ## Members Coloumn Box Settings ## */
+
+.members-contents {
+    width: 1080px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0;
+}
+.members-contents h2{
+    text-align: center;
+    font-family: 'Bangers', cursive;
+}
+.members-contents .extra-details{
+    font-size: 18px;
+    font-family: 'Sigmar One', cursive;
+}
+.members-contents:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.cards {
+    width: 20%;
+    float: left;
+    padding: 15px;
+}
+.contents-container:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.member_image {
+    display: block;
+    position: relative;
+}
+.member_image img {
+    width: 100%;
+    max-width: 100%;
+    height: 160px;
+    display: block;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+.member_image:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+    transition: opacity .3s ease;
+    opacity: 0;
+}
+.member-container {
+    position: relative;
+    transition: box-shadow .3s ease;
+    box-shadow: 0 10px 30px transparent;
+    border-radius: 10px;
+}
+.member-container.hover-in {
+    transition: transform .2s ease-out;
+    transition: transform .2s ease-out;
+}
+.member-container.hover-out {
+    transition: -webkit-transform .2s ease-in;
+    transition: transform .2s ease-in;
+    transition: transform .2s ease-in;
+}
+.cards:hover .member-container {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.member-container a{
+    text-decoration: none;
+}
+.cards:hover .member_image::after {
+    opacity: 1;
+}
+.cards:hover .member-details {
+    border-width: 3px;
+    box-shadow: 0 10px 20px rgba(0, 180, 180, 0.8);
+    border-radius: 10px;
+}
+.cards:hover .member-name, .cards:hover .extra-details {
+    transform: translateY(0) scale(0.75);
+    justify-content: center;
+    opacity: 1;
+}
+.cards:hover .member_image img{
+    opacity: 0.3;
+}
+.cards:hover .member-name {
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.member-details {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 15px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transform: translateZ(30px);
+    border: 0 solid rgba(0,0,0,0.4);
+    border-radius: 8px;
+    transition: border .4s ease;
+}
+.member-name {
+    margin: 0 0 10px;
+    font-size: 36px;
+    font-weight: 700;
+    transition: .4s ease;
+    opacity: 0;
+    transform: translateY(40px) scale(0);
+    will-change: transform;
+}
+.member-name a {
+    color: white;
+}
+.extra-details {
+    opacity: 0;
+    transition: .4s ease;
+    transition-delay: .1s;
+    transform: translateY(40px) scale(0);
+    will-change: transform;
+}
+.extra-details a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.3em;
+}
+
+/*  ###  3D Hover Effect Content ###  */
+
+.site-content {
+    width: 1080px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0;
+}
+.site-content:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.demo {
+    margin: 50px 0;
+}
+.demo h1{
+    color: #FFF;
+    font-family: 'Lobster';
+    font-size: 50px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-style: oblique;
+    background: rgab(160, 180,50,.6);
+    text-shadow: 5px 5px 10px #ff0000;
+}
+.demo h2 {
+    margin-bottom: 10px;
+    line-height: 1;
+}
+.demo-1 {
+    text-align: center;
+}
+.project {
+    width: 50%;
+    float: left;
+    padding: 15px;
+}
+.project-list:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.project__image {
+    display: block;
+    position: relative;
+}
+.project__image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+.project__image:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+    transition: opacity .3s ease;
+    opacity: 0;
+}
+.project__card {
+    position: relative;
+    transition: box-shadow .3s ease;
+    box-shadow: 0 10px 30px transparent;
+    border-radius: 10px;
+}
+.project__card.hover-in {
+    transition: transform .2s ease-out;
+    transition: transform .2s ease-out;
+}
+.project__card.hover-out {
+    transition: -webkit-transform .2s ease-in;
+    transition: transform .2s ease-in;
+    transition: transform .2s ease-in;
+}
+.project:hover .project__card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.project__card a{
+    text-decoration: none;
+}
+.project:hover .project__image:after {
+    opacity: 1;
+}
+.project:hover .project__detail {
+    border-width: 5px;
+    box-shadow: 0 10px 20px rgba(0, 180, 180, 0.8);
+    border-radius: 10px;
+}
+.project:hover .project__title, .project:hover .project__category {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+.project:hover .project__title {
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.project__detail {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transform: translateZ(30px);
+    border: 0 solid rgba(0,188,188,0.6);
+    border-radius: 8px;
+    transition: border .4s ease;
+}
+.project__title {
+    margin: 0 0 10px;
+    font-size: 36px;
+    font-weight: 700;
+    transition: .4s ease;
+    opacity: 0;
+    transform: translateY(40px) scale(0);
+    will-change: transform;
+}
+.project__title a {
+    color: white;
+}
+.project__category {
+    opacity: 0;
+    transition: .4s ease;
+    transition-delay: .1s;
+    transform: translateY(40px) scale(0);
+    will-change: transform;
+}
+.project__category a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.3em;
+}
+
+hard {
+    margin: 0 auto;
+    width: 250px;
+}
+.hard-list:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.hard__card {
+    position: relative;
+    width: 250px;
+    height: 370px;
+    transition: .2s ease-out;
+}
+.hard [class*="layer"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+}
+.hard .layer-1 {
+    background-image: url(dist/images/deadpool/deadpool-bg.png);
+    background-size: cover;
+}
+.hard .layer-2 {
+    background-image: url(dist/images/deadpool/deadpool.png);
+    background-size: cover;
+    transform: translateZ(30px);
+}
+.hard .layer-3 {
+    background-image: url(dist/images/deadpool/deadpool-title.png);
+    background-size: cover;
+    transform: translateZ(50px);
+}
+.hard .shine {
+    border-radius: 10px;
+}
+
+
+
+.backto-top{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background: linear-gradient(to bottom,rgba(90,150,50,0.95), rgba(90,100,70,0.8));
+    text-decoration: none;
+    width: 40px;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+
+
+/*##########   Mobileview settings   #############*/
+
+ @media only screen and (max-width: 900px){
+ 	header div.container nav ul li.navico{
+		opacity: 1;
+	}
+	header div.container nav ul li.navitms{
+		display: none;
+	}
+	header.scrolled .Signup a,
+	header.scrolled .Login a{
+		display: none;
+	}
+
+    header div.container nav,header div.container nav ul.FullScreen{
+         display: block;
+    }
+    header div.Login, header div.Signup{
+         display: none;
+    }
+    header div.container nav ul.FullScreen li.navico{
+         position: fixed;
+         top: 30%;
+         right: 5%;
+    }
+     
+	header div.container nav ul.FullScreen:not(:nth-last-child(1)){
+		display: none;
+	}
+
+	header div.container nav ul.FullScreen.Mobile_view{
+		position: absolute;
+		display: block;
+	}
+    header div.container nav ul.FullScreen.Mobile_view {
+         background: linear-gradient(to left,rgba(0,50,80,0.9),rgba(26,178,255,0.6));
+         transition: 5s;
+         border-radius: 20px;
+    }
+	header div.container nav ul.FullScreen.Mobile_view li:not(:nth-last-child(1)){
+		float: left;
+        display: block;
+        padding: 8px 0px;
+        width: 100%;
+        align-content: flex-end;
+        background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.00001));
+	}
+
+	header div.container nav ul.FullScreen.Mobile_view li a:not(:nth-last-child(1)){
+		display: block;
+		text-align: right;
+        margin-right: 20px;
+	}
+     
+    div.rows div.col-4{
+        text-align: center;
+         width: 50%;
+         margin: auto;
+     }
+    div.rows div.col-2-4{
+         width: 100%;
+         margin: 0;
+     }
+    .video-files video{
+    width: 50%;
+    }
+ }
+
+@media only screen and (max-width: 600px){
+    .video-files video{
+    width: 100%;
+    margin: 15px auto;
+    }
+    div.rows div.col-4{
+         width: 100%;
+         margin: 0;
+     }
+    .project {
+    width: 100%;
+    text-align: center;
+    float: none;
+    justify-content: center;
+    padding: 15px;
+    }
+    .cards{
+        width:100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .member-container{
+        width: 60%;
+        height: 250px;
+    }
+    .member-container .member_image img{
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* ################################################################################################ */
+
+
+ /*############### Designing footer ########################*/
+
+.footer-main-div{
+	 width: 100%;
+	 height: auto;
+	 margin: auto;
+	 background: rgba(0, 0, 0, 0.65);
+     border-radius: 15px 15px 0 0;
+	 padding: 20px 0;
+ }
+/* Footer social icons edits */
+.footer-main-div .footer-social-icons{
+	 width: 100%;
+	 height: auto;
+	 margin: auto;
+ }
+.footer-main-div .footer-social-icons ul{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+ }
+.footer-main-div .footer-social-icons ul li{
+ 	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 2% 2%;
+	background: #669900;
+	border-radius: 100%;
+	cursor: pointer;
+    transition: 0.3s;
+ }
+.footer-main-div .footer-social-icons ul li a{
+		color: #272727;
+		font-size: 25px;
+	}
+.footer-main-div .footer-social-icons ul li a i{
+		line-height: 50px;
+	}
+.footer-main-div .footer-social-icons ul li:hover{
+    transform: scale(1.3);
+    background: rgba(0, 77, 128, 0.4);
+    box-shadow: 10px 10px 11px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.footer-main-div .footer-social-icons ul li a.facebook:hover{
+    color: rgba(59,89,153,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.twitter:hover{
+    color: rgba(29,161,242,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.instagram:hover{
+    color: rgba(228,64,95,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.snapchat:hover{
+    color: rgba(255,252,0,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.quora:hover{
+    color: rgba(185,43,39,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.linked-in:hover{
+    color: rgba(0,119,181,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.reddit:hover{
+    color: rgba(255,87,1,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.whatsapp:hover{
+    color: rgba(37,211,102,0.6);
+}
+.footer-main-div .footer-social-icons ul li a.youtube:hover{
+    color: rgba(210,48,43,0.6);
+}
+/*############ Footer menu one edits ######*/
+.footer-main-div .footer-menu-one{
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+.change-icon > .fa + .fa,
+.change-icon:hover > .fa {
+    display: none;
+}
+.change-icon:hover > .fa + .fa {
+    display: block;
+    list-style: none;
+    text-decoration: none;
+    transform: scale(3);
+    color: aqua;
+}
+.footer-main-div .footer-menu-one ul{
+	 margin: 0;
+	 padding: 0;
+	 text-align: center;
+	 display: block;
+}
+.footer-main-div .footer-menu-one ul li{
+	 display: inline-block;
+	 margin: 2% 2%;
+     width: 130px;
+	 border-radius: 100%;
+	 cursor: pointer;
+}
+#icons_nested{
+		 font-family: arial;
+		 color: #fbe;
+		 font-size: 16px;
+		 font-weight: 600;
+		 text-decoration: none;
+		 text-transform: uppercase;
+}
+.footer-main-div .footer-menu-one ul li.footerhome-new{
+    display: none;
+}
+.footer-main-div .footer-menu-one ul li.footerhome-new{
+    color: aqua; 
+    transition: 0.5s;
+    transform: scale(1.4);
+}
+
+	 /* Footer Menu Two edits */
+
+.footer-main-div .footer-menu-two{
+	 	width: 100%;
+	 	height: auto;
+	 	margin: auto;
+        margin-top: 10px;
+}
+.footer-main-div .footer-menu-two ul{
+	 	 margin: 0;
+	 	 padding: 0;
+	 	 text-align: center;
+	 	 display: block;
+}
+.footer-main-div .footer-menu-two ul li{
+	 	 display: inline-block;
+	 	 margin: 0 2%;
+	 	 border-radius: 100%;
+	 	 cursor: pointer;
+}
+.footer-main-div .footer-menu-two ul li a{
+	 		 font-family: arial;
+	 		 color: #fff;
+	 		 font-size: 12px;
+	 		 font-weight: 600;
+	 		 text-decoration: none;
+	 		 text-transform: uppercase;
+}
+
+/* ############Footer bottom part ############# */
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-around;
+	width: 100%;
+	height: auto;
+	margin: auto;
+	background: #32cd32;
+	padding: 10px;
+}
+.footer-bottom p{
+	font-family: "Roboto Cn", sans-serif;
+	font-size: 18px;
+	text-align: center;
+	color: #ffff00;
+	letter-spacing: 1px;
+}
+.footer-bottom p a{
+	text-decoration: none;
+	color: #4d004d;
+    font-size: 18px;
+    font-weight: 700;
+	letter-spacing: 1px;
+}
+.footer-bottom h1{
+    display: block;
+    text-align: end;
+    color: #007399;
+    font-size: 15px;
+}
