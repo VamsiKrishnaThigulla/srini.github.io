@@ -100,6 +100,20 @@
 			}
 		</script>
 	</header>
+	
+	<!--##### Generating preloader class & Disabling scroll when loading #####-->
+    <script>
+        $(window).on("load", function(){
+            $('body').css('overflowY','hidden');
+            setTimeout(function(){
+                $(".loader-wrapper").fadeOut(800);
+                $('body').css('overflowY','auto');
+            },200);
+        })
+    </script>
+<!--##### End of preloader class Generation Script #####-->
+
+<!--  ###########################################################################################################  -->
 
 <!--  ##########################################################################################################  -->
 
@@ -932,20 +946,6 @@
             <img class="loaderImage" src="imageedit_1_8135409332.png">
         </div>
     </div>
-
-<!--##### Generating preloader class & Disabling scroll when loading #####-->
-    <script>
-        $(window).on("load", function(){
-            $('body').css('overflowY','hidden');
-            setTimeout(function(){
-                $(".loader-wrapper").fadeOut(4000);
-                $('body').css('overflowY','auto');
-            },200);
-        })
-    </script>
-<!--##### End of preloader class Generation Script #####-->
-
-<!--  ###########################################################################################################  -->
 
 <!--  Script to Generate 3D Hover Effect    -->
 	<script>window.twttr = (function(d, s, id) {
