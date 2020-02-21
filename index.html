@@ -32,6 +32,18 @@
 
 <!--  ########################################################################################################  -->
 
+<!--##### Generating preloader class & Disabling scroll when loading #####-->
+    <script>
+        $(window).on("load", function(){
+            $('body').css('overflow-y','hidden');
+            setTimeout(function(){
+                $(".loader-wrapper").fadeOut(800);
+                $('body').css('overflow-y','auto');
+            },200);
+        })
+    </script>
+<!--##### End of preloader class Generation Script #####-->
+	
 <!--    OnScroll JavaScript Function-->
     <script type="text/javascript">
   	$(window).on('scroll', function(){
@@ -100,18 +112,6 @@
 			}
 		</script>
 	</header>
-	
-	<!--##### Generating preloader class & Disabling scroll when loading #####-->
-    <script>
-        $(window).on("load", function(){
-            $('body').css('overflowY','hidden');
-            setTimeout(function(){
-                $(".loader-wrapper").fadeOut(800);
-                $('body').css('overflowY','auto');
-            },200);
-        })
-    </script>
-<!--##### End of preloader class Generation Script #####-->
 
 <!--  ###########################################################################################################  -->
 
