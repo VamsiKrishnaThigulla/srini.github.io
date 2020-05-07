@@ -946,6 +946,19 @@ header.scrolled .Signup a{
       font-size: 1.3em;
 }
 
+.about-contents {
+     color: #FFF;
+    font-family: 'Lobster';
+    font-size: 23px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-style: oblique;
+    background: rgab(255, 255,255,.6);
+    /*text-shadow: 5px 5px 10px #ff0000;*/
+}
+
 /*  ###  3D Hover Effect Content ###  */
 
 .site-content {
