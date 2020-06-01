@@ -21,4 +21,4 @@ DOTS is aimed at general readers of news. It is also aimed at writers who want t
 - Vijay Meena - Primary Front End Developer - ced18i057@iiitdm.ac.in
 - Shashank Dokania - Content Validation, Spam Checking - coe18b067@iiitdm.ac.in
 
-![SiteMap](https://drive.google.com/file/d/1De5HgLJumiO450hI1xwvxztmIsVUQRZu/view?usp=sharing)
+![SiteMap](gloomap_8781c185.jpg)
